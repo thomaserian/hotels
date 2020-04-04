@@ -1,0 +1,28 @@
+{
+  "name": "hotels",
+  "version": "1.0.0",
+  "description": "simple hotels app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "testwatch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomaserian/hotels.git"
+  },
+  "author": "Thomas Erian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomaserian/hotels/issues"
+  },
+  "homepage": "https://github.com/thomaserian/hotels#readme",
+  "dependencies": {
+    "@types/jest": "^25.2.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "jest": "^25.2.7",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.0"
+  }
+}
