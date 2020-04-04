@@ -1,5 +1,6 @@
 const Hotel=require('./Hotel');
 const GeneralUtilities=require('../utils/GeneralUtilities');
+const ModelUtilities=require('../utils/ModelsUtilities');
 const nodeFetch = require('node-fetch');
 
 module.exports=class Inventory{
@@ -21,8 +22,7 @@ module.exports=class Inventory{
     mapJson(aJson){
         if(aJson.hotels){
             for(let x=0;x<aJson.hotels.length;x++){
-                let tempHotel=new Hotel();
-                tempHotel.mapJson(aJson.hotels[x]);
+                let tempHotel=ModelUtilities.createInstanceAndMap(Hotel,aJson.hotels[x]);
                 this.hotels.push(tempHotel);
             }
         }

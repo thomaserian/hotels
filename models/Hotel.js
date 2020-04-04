@@ -1,4 +1,5 @@
 const Availability=require('./Availability');
+const ModelUtilities=require('../utils/ModelsUtilities');
 const GeneralUtilities=require('../utils/GeneralUtilities');
 
 module.exports=class Hotel{
@@ -16,8 +17,7 @@ module.exports=class Hotel{
         
         if(aJson.availability){
             for(let x=0;x<aJson.availability.length;x++){
-                let tempAvailability=new Availability();
-                tempAvailability.mapJson(aJson.availability[x]);
+                let tempAvailability=ModelUtilities.createInstanceAndMap(Availability,aJson.availability[x]);
                 this.availability.push(tempAvailability);
             }
         }

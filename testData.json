@@ -1,0 +1,58 @@
+{
+    "originalArray":[
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
+    ],
+    "sortByNameAsc":[
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" }
+    ],
+    "sortByNameDesc":[
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
+    ],
+    "sortByIdAsc":[
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "thomas", "id": 7, "date": "2020-1-25" }
+    ],
+    "sortByIdDesc":[
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" }
+    ],
+    "sortByDateAsc":[
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "fady", "id": 2, "date": "2020-5-6" }
+    ],
+    "sortByDateDesc":[
+        { "name": "fady", "id": 2, "date": "2020-5-6" },
+        { "name": "victor", "id": 5, "date": "2020-4-5" },
+        { "name": "thomas", "id": 7, "date": "2020-1-25" },
+        { "name": "erian", "id": 1, "date": "2019-6-7" },
+        { "name": "maher", "id": 3, "date": "2018-2-8" },
+        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
+    ]
+}

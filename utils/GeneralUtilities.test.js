@@ -1,4 +1,5 @@
 const GeneralUtilities=require('./GeneralUtilities');
+const testData=require('../testData.json');
 
 describe("testing isValueInRange function", () => {
 
@@ -79,87 +80,28 @@ describe("testing sortArrayOfObjects function",()=>{
         expect(GeneralUtilities.sortArrayOfObjects).toBeDefined();
     });
 
-    let originalArray = [
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
-    ];
-
-    let expectedCases = [
-    [
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" }
-    ], 
-    [
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
-    ], 
-    [
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "thomas", "id": 7, "date": "2020-1-25" }
-    ], 
-    [
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" }
-    ], 
-    [
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "fady", "id": 2, "date": "2020-5-6" }
-    ], 
-    [
-        { "name": "fady", "id": 2, "date": "2020-5-6" },
-        { "name": "victor", "id": 5, "date": "2020-4-5" },
-        { "name": "thomas", "id": 7, "date": "2020-1-25" },
-        { "name": "erian", "id": 1, "date": "2019-6-7" },
-        { "name": "maher", "id": 3, "date": "2018-2-8" },
-        { "name": "abanoub", "id": 4, "date": "2016-3-23" }
-    ]];
-
     test("case 1 sort by name asc ",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"asc")).toEqual(expectedCases[0]);
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"name",String,"asc")).toEqual(testData.sortByNameAsc);
     });
 
     test("case 2 sort by name desc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"desc")).toEqual(expectedCases[1]);
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"name",String,"desc")).toEqual(testData.sortByNameDesc);
     });
 
     test("case 3 sort by id asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"asc")).toEqual(expectedCases[2]);
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"id",Number,"asc")).toEqual(testData.sortByIdAsc);
     });
 
     test("case 4 sort by id desc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"desc")).toEqual(expectedCases[3]);
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"id",Number,"desc")).toEqual(testData.sortByIdDesc);
     });
 
     test("case 5 sort by date asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"asc")).toEqual(expectedCases[4]);
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"date",Date,"asc")).toEqual(testData.sortByDateAsc);
     });
 
-    test("case 6 sort by date asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"desc")).toEqual(expectedCases[5]);
+    test("case 6 sort by date desc",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(testData.originalArray,"date",Date,"desc")).toEqual(testData.sortByDateDesc);
     });
 });
 
@@ -186,6 +128,21 @@ describe("testing isDateDMYFormat function",()=>{
 
     test("case 2",()=>{
         expect(GeneralUtilities.isDateDMYFormat("2020-5-20")).toBeFalsy();
+    });
+});
+
+describe("testing is getDateObjectFromString function",()=>{
+
+    test("testing the existance of the function",()=>{
+        expect(GeneralUtilities.getDateObjectFromString).toBeDefined();
+    });
+
+    test("case Day-Month-Year",()=>{
+        expect(GeneralUtilities.getDateObjectFromString("20-5-2020")).toStrictEqual(new Date("2020-5-20"));
+    });
+
+    test("case Year-Day-Month",()=>{
+        expect(GeneralUtilities.getDateObjectFromString("2020-5-20")).toStrictEqual(new Date("2020-5-20"));
     });
 });
 

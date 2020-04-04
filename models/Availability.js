@@ -8,19 +8,11 @@ module.exports=class Availability{
 
     mapJson(aJson){
         if(aJson.from){
-            if( GeneralUtilities.isDateDMYFormat(aJson.from) )
-            {
-                aJson.from=GeneralUtilities.dateToYMDFormat(aJson.from);
-            }
-            this.from=new Date(aJson.from);
+            this.from=GeneralUtilities.getDateObjectFromString(aJson.from);
         }
 
         if(aJson.to){
-            if( GeneralUtilities.isDateDMYFormat(aJson.to) )
-            {
-                aJson.to=GeneralUtilities.dateToYMDFormat(aJson.to);
-            }
-            this.to=new Date(aJson.to);
+            this.to=GeneralUtilities.getDateObjectFromString(aJson.to);
         }
     }
 

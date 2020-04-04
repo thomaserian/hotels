@@ -92,6 +92,19 @@ module.exports.getHotelsFake=async () =>{
             else{
                 reject(err);
             }
-        },2000);
+        },500);
     });
+}
+
+/**
+ * @param {string} date a string representing a date in Day-Month-Year or Year-Month-Day formats
+ * @return {date} a javascript date object
+ */
+module.exports.getDateObjectFromString = (date)=>
+{
+    if( this.isDateDMYFormat(date) )
+    {
+        date=this.dateToYMDFormat(date);
+    }
+    return (new Date(date));
 }
