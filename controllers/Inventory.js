@@ -1,4 +1,5 @@
 const InventoryServices=require('../services/InventoryServices');
+const GeneralUtilities=require('../utils/GeneralUtilities');
 
 module.exports.InventorySearchController=async (req,res,next)=>{
     let queryParams=req.query;
@@ -7,8 +8,8 @@ module.exports.InventorySearchController=async (req,res,next)=>{
         city:queryParams.destination,
         priceFrom:queryParams.priceFrom,
         priceTo:queryParams.priceTo,
-        fromDate:queryParams.availablefromDate,
-        toDate:queryParams.availabletoDate
+        fromDate:GeneralUtilities.getDateObjectFromString(queryParams.availablefromDate),
+        toDate:GeneralUtilities.getDateObjectFromString(queryParams.availabletoDate)
     };
 
     let sortCriteria={
