@@ -26,24 +26,25 @@ module.exports=class Hotel{
     isMatchingCriteria(name,city,priceFrom,priceTo,fromDate,toDate){
         let isMatch=true;
         if(name){
-            isMatch = isMatch && this.name===name;
+            isMatch = ( isMatch && this.name===name );
         }
 
         if(city){
-            isMatch = isMatch && this.city===city;
+            isMatch = ( isMatch && this.city===city );
         }
 
         if(priceFrom && priceTo){
-            isMatch = isMatch && GeneralUtilities.isValueInRange(Number,priceFrom,this.price,priceTo);
+            isMatch = ( isMatch && GeneralUtilities.isValueInRange(Number,priceFrom,this.price,priceTo) );
         }
 
         if(fromDate && toDate){
 
             let datesMatch=false;
             this.availability.forEach(availability =>{
-                datesMatch = datesMatch || availability.isAvailableAt(fromDate,toDate);
+
+                datesMatch = ( datesMatch || availability.isAvailableAt(fromDate,toDate) );
             });
-            isMatch = isMatch && datesMatch;
+            isMatch = ( isMatch && datesMatch );
 
         }
 

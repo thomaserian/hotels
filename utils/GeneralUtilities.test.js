@@ -88,81 +88,78 @@ describe("testing sortArrayOfObjects function",()=>{
         { "name": "abanoub", "id": 4, "date": "2016-3-23" }
     ];
 
-    let expectedCase1 = [
+    let expectedCases = [
+    [
         { "name": "abanoub", "id": 4, "date": "2016-3-23" },
         { "name": "erian", "id": 1, "date": "2019-6-7" },
         { "name": "fady", "id": 2, "date": "2020-5-6" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "thomas", "id": 7, "date": "2020-1-25" },
         { "name": "victor", "id": 5, "date": "2020-4-5" }
-    ];
-
-    test("case 1 sort by name asc ",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"asc")).toEqual(expectedCase1);
-    });
-
-    let expectedCase2 = [
+    ], 
+    [
         { "name": "victor", "id": 5, "date": "2020-4-5" },
         { "name": "thomas", "id": 7, "date": "2020-1-25" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "fady", "id": 2, "date": "2020-5-6" },
         { "name": "erian", "id": 1, "date": "2019-6-7" },
         { "name": "abanoub", "id": 4, "date": "2016-3-23" }
-    ];
-
-    test("case 2 sort by name desc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"desc")).toEqual(expectedCase2);
-    });
-
-    let expectedCase3 = [
+    ], 
+    [
         { "name": "erian", "id": 1, "date": "2019-6-7" },
         { "name": "fady", "id": 2, "date": "2020-5-6" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "abanoub", "id": 4, "date": "2016-3-23" },
         { "name": "victor", "id": 5, "date": "2020-4-5" },
         { "name": "thomas", "id": 7, "date": "2020-1-25" }
-    ];
-
-    test("case 3 sort by id asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"asc")).toEqual(expectedCase3);
-    });
-
-    let expectedCase4 = [
+    ], 
+    [
         { "name": "thomas", "id": 7, "date": "2020-1-25" },
         { "name": "victor", "id": 5, "date": "2020-4-5" },
         { "name": "abanoub", "id": 4, "date": "2016-3-23" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "fady", "id": 2, "date": "2020-5-6" },
         { "name": "erian", "id": 1, "date": "2019-6-7" }
-    ];
-
-    test("case 4 sort by id desc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"desc")).toEqual(expectedCase4);
-    });
-
-    let expectedCase5 = [
+    ], 
+    [
         { "name": "abanoub", "id": 4, "date": "2016-3-23" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "erian", "id": 1, "date": "2019-6-7" },
         { "name": "thomas", "id": 7, "date": "2020-1-25" },
         { "name": "victor", "id": 5, "date": "2020-4-5" },
         { "name": "fady", "id": 2, "date": "2020-5-6" }
-    ];
-
-    test("case 5 sort by date asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"asc")).toEqual(expectedCase5);
-    });
-
-    let expectedCase6 = [
+    ], 
+    [
         { "name": "fady", "id": 2, "date": "2020-5-6" },
         { "name": "victor", "id": 5, "date": "2020-4-5" },
         { "name": "thomas", "id": 7, "date": "2020-1-25" },
         { "name": "erian", "id": 1, "date": "2019-6-7" },
         { "name": "maher", "id": 3, "date": "2018-2-8" },
         { "name": "abanoub", "id": 4, "date": "2016-3-23" }
-    ];
+    ]];
+
+    test("case 1 sort by name asc ",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"asc")).toEqual(expectedCases[0]);
+    });
+
+    test("case 2 sort by name desc",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"name",String,"desc")).toEqual(expectedCases[1]);
+    });
+
+    test("case 3 sort by id asc",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"asc")).toEqual(expectedCases[2]);
+    });
+
+    test("case 4 sort by id desc",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"id",Number,"desc")).toEqual(expectedCases[3]);
+    });
+
+    test("case 5 sort by date asc",()=>{
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"asc")).toEqual(expectedCases[4]);
+    });
+
     test("case 6 sort by date asc",()=>{
-        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"desc")).toEqual(expectedCase6);
+        expect(GeneralUtilities.sortArrayOfObjects(originalArray,"date",Date,"desc")).toEqual(expectedCases[5]);
     });
 });
 
