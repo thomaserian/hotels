@@ -3,9 +3,6 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
-    environment:
-      CC_TEST_REPORTER_ID: f3bc884258d1cbcb4fee1ce87cb7310a278b971c55a6ef153007a653c597e051
-    working_directory: ~/repo
     executor:
       name: node/default
     steps:
