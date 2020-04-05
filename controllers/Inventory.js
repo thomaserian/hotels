@@ -10,6 +10,9 @@ module.exports.InventorySearchController=async (req,res,next)=>{
     let availabletoDate=queryParams.availableToDate ?
      GeneralUtilities.getDateObjectFromString(queryParams.availableToDate) : null;
 
+    let sortByName= queryParams.sortByName?Number(queryParams.sortByName): null;
+    let sortByPrice= queryParams.sortByPrice?Number(queryParams.sortByPrice): null;
+
     let searchCriteria={
         name:queryParams.name,
         city:queryParams.destination,
@@ -20,9 +23,9 @@ module.exports.InventorySearchController=async (req,res,next)=>{
     };
 
     let sortCriteria={
-        name:queryParams.sortByName,
+        sortByName:sortByName,
         nameSortOrder:queryParams.nameSortOrder,
-        price:queryParams.sortByPrice,
+        sortByPrice:sortByPrice,
         priceSortOrder:queryParams.priceSortOrder
     };
 

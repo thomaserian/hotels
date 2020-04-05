@@ -39,13 +39,13 @@ module.exports=class Inventory{
         return searchResult;
     }
 
-    sort(array,name,nameSortType,price,priceSortType)
+    sort(array,sortByname,nameSortType,sortByPrice,priceSortType)
     {
         let sortResult=GeneralUtilities.arrayCopy(array);
-        if(name){
+        if(sortByname){
             GeneralUtilities.sortArrayOfObjects(sortResult,"name",String,nameSortType);
         }
-        if(price){
+        if(sortByPrice){
             GeneralUtilities.sortArrayOfObjects(sortResult,"price",Number,priceSortType);
         }
         return sortResult;

@@ -10,7 +10,7 @@ module.exports.InventorySearchService=async (searchCriteria,sortCriteria)=>
     filteredSortedHotels=inventory.search(searchCriteria.name,searchCriteria.city,
         searchCriteria.priceFrom,searchCriteria.priceTo,searchCriteria.fromDate,searchCriteria.toDate);
 
-    filteredSortedHotels=inventory.sort(filteredSortedHotels,sortCriteria.name,sortCriteria.nameSortOrder,sortCriteria.price,
+    filteredSortedHotels=inventory.sort(filteredSortedHotels,sortCriteria.sortByName,sortCriteria.nameSortOrder,sortCriteria.sortByPrice,
         sortCriteria.priceSortOrder);
 
     return filteredSortedHotels;
