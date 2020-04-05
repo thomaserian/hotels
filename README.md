@@ -3,10 +3,18 @@
 A simple app to search the ideal hotel for you
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/700526c3b2917955da39/maintainability)](https://codeclimate.com/github/thomaserian/hotels/maintainability)
-
 [![thomaserian](https://circleci.com/gh/thomaserian/hotels.svg?style=svg&circle-token=b23b98cfb1591a3f79f8c347799af73c3f58f39d)](https://app.circleci.com/pipelines/github/thomaserian/hotels)
-
 [![thomaserian](https://circleci.com/gh/thomaserian/hotels.svg?style=svg&circle-token=3dae88500bdd4706eeacd3c2d0e0a55e17161538)](https://app.circleci.com/pipelines/github/thomaserian/hotels/15/workflows/645ed424-599e-4ecf-bb93-f025ae90066a/jobs/17/artifacts)
+
+## Notes
+please note that the actual Json project is down since i received the task so i created a fake data file with the
+same structure as the orignal response and i used the timeout function to mimic the behaviour of async calls
+but you can uncomment the code that makes the actual call then it should work fine if the server is back
+
+i assumed that there is no need to make authentication,ssl or validation on requests but in a real project
+this will all be required for sure 
+
+i also assumed that i am only allowed to used javascript built in functionalities for sorting , testing equality ,etc ....
 
 ## Getting Started
 
@@ -20,7 +28,7 @@ first deployment option
 
 second deployment option
 
-1-node and npm should be installed on your machine
+1-node and npm must be installed on your machine
 
 ### Installing
 

@@ -85,6 +85,7 @@ module.exports.isDateDMYFormat=(date)=>
 
 module.exports.getHotelsFake=async () =>{
     return newPromise=new Promise((resolve,reject)=>{
+        let randomDelay=(Math.random()*500);
         setTimeout(err=>{
             if(!err){
                 resolve(require('../fakeData.json'));
@@ -92,7 +93,7 @@ module.exports.getHotelsFake=async () =>{
             else{
                 reject(err);
             }
-        },500);
+        },randomDelay);
     });
 }
 
