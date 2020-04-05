@@ -1,0 +1,14 @@
+version: '3.7'
+services: 
+  hotels-backend: 
+    build: 
+     context: ../../
+    environment:
+      - NODE_ENV=prod
+      - EXPOSE_PORT=2000
+    volumes:
+      - type: bind
+        source: ../../
+        target: /usr/src/app
+    ports: 
+      - "2000:2000"

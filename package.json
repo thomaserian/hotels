@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "testwatch": "jest --watchAll"
+    "testwatch": "jest --watchAll",
+    "deploydev": "(cd ./configurations/dev && docker-compose up --build --force-recreate)"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,8 @@
     "node-fetch": "^2.6.0"
   },
   "jest": {
-    "collectCoverage":true,
-    "coverageDirectory":"./coverage",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
     "verbose": true
   }
 }

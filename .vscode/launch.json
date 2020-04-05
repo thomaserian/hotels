@@ -11,11 +11,11 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\index.js",
+            "program": "${workspaceFolder}//index.js",
             "env": {
                 "NODE_ENV": "development",
                 "CONFIGURATIONS_PATH":"dev",
-                "SERVER_PORT": "2100",
+                "SERVER_PORT": "2000",
                 "THIRD_PARTY_HOST":"api.myjson.com"
             }
         }
