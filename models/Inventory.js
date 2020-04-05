@@ -14,7 +14,8 @@ module.exports=class Inventory{
         //     "method":"get",
         //     "headers": {"Content-Type": "application/json" }
         // };
-        // const data=await nodeFetch(URL,requestBody);
+        // const response=await nodeFetch(URL,requestBody);
+        // const data=await response.json();
         const data=await GeneralUtilities.getHotelsFake();
         this.mapJson(data);
     }
