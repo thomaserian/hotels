@@ -7,10 +7,18 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
       - store_artifacts:
-        path: coverage
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+      - store_test_results:
+          path: test-results.xml
 workflows:
     build-and-test:
       jobs:
